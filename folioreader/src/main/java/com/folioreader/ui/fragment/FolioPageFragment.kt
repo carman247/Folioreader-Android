@@ -171,8 +171,8 @@ class FolioPageFragment : Fragment(),
         highlightStyle =
             HighlightImpl.HighlightStyle.classForStyle(HighlightImpl.HighlightStyle.Normal)
         mRootView = inflater.inflate(R.layout.folio_page_fragment, container, false)
-        mPagesLeftTextView = mRootView!!.findViewById<View>(R.id.pagesLeft) as TextView
-        mMinutesLeftTextView = mRootView!!.findViewById<View>(R.id.minutesLeft) as TextView
+        // mPagesLeftTextView = mRootView!!.findViewById<View>(R.id.pagesLeft) as TextView
+        // mMinutesLeftTextView = mRootView!!.findViewById<View>(R.id.minutesLeft) as TextView
 
         mConfig = AppUtil.getSavedConfig(context)
 
@@ -515,7 +515,7 @@ class FolioPageFragment : Fragment(),
             if (!urlOfEpub) {
                 // Otherwise, give the default behavior (open in browser)
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-                startActivity(intent)
+                // startActivity(intent)
             }
 
             return true
@@ -732,8 +732,8 @@ class FolioPageFragment : Fragment(),
                 getString(R.string.less_than_minute)
             }
 
-            mMinutesLeftTextView!!.text = minutesRemainingStr
-            mPagesLeftTextView!!.text = pagesRemainingStr
+            // mMinutesLeftTextView!!.text = minutesRemainingStr
+            // mPagesLeftTextView!!.text = pagesRemainingStr
         } catch (exp: java.lang.ArithmeticException) {
             Log.e("divide error", exp.toString())
         } catch (exp: IllegalStateException) {
